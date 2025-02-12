@@ -11,12 +11,16 @@ SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
   const colorScheme = useColorScheme();
+
   const [loaded] = useFonts({
-    QuickSandLight: require("../assets/fonts/Quicksand-Light.ttf"),
-    QuickSandMedium: require("../assets/fonts/Quicksand-Medium.ttf"),
-    QuickSandRegular: require("../assets/fonts/Quicksand-Regular.ttf"),
-    QuickSandSemiBold: require("../assets/fonts/Quicksand-SemiBold.ttf"),
-    QuickSandBold: require("../assets/fonts/Quicksand-Bold.ttf"),
+    RalewayExtraLight: require("../assets/fonts/Raleway-ExtraLight.ttf"),
+    RalewayLight: require("../assets/fonts/Raleway-Light.ttf"),
+    RalewayMedium: require("../assets/fonts/Raleway-Medium.ttf"),
+    RalewayRegular: require("../assets/fonts/Raleway-Regular.ttf"),
+    RalewaySemiBold: require("../assets/fonts/Raleway-SemiBold.ttf"),
+    RalewayBold: require("../assets/fonts/Raleway-ExtraBold.ttf"),
+    RalewayExtraBold: require("../assets/fonts/Raleway-Bold.ttf"),
+    RalewayBlack: require("../assets/fonts/Raleway-Black.ttf"),
   });
 
   useEffect(() => {

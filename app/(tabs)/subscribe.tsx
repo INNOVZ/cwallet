@@ -23,13 +23,13 @@ const subscribe = () => {
       <View className="flex-1 conatiner text-center flex m-5 justify-center items-center ">
         <Text
           className="text-yellow-600 font-normal text-xl"
-          style={{ fontFamily: "QuickSandBold" }}
+          style={{ fontFamily: " RalewayBold" }}
         >
           Subsribe Emaletx Premium
         </Text>
         <View className="">
           <Text
-            style={{ fontFamily: "QuickSandBold" }}
+            style={{ fontFamily: " RalewayBold" }}
             className="mx-5 text-center text-[#FFFFFF] text-xl font-semibold mt-10"
           >
             Our Plans
@@ -37,7 +37,7 @@ const subscribe = () => {
           <View className="mt-5 w-9/12">
             <Text
               className="text-[#BCBCBC] text-center text-base"
-              style={{ fontFamily: "QuickSandBold" }}
+              style={{ fontFamily: " RalewayBold" }}
             >
               Choose a subscription plan to enjoy our Premium Crypto Signals
             </Text>
