@@ -1,43 +1,63 @@
-import { Tabs } from 'expo-router';
-import React from 'react';
-import { Platform } from 'react-native';
-
-import { HapticTab } from '@/components/HapticTab';
-import { IconSymbol } from '@/components/ui/IconSymbol';
-import TabBarBackground from '@/components/ui/TabBarBackground';
-import { Colors } from '@/constants/Colors';
-import { useColorScheme } from '@/hooks/useColorScheme';
-
+import { Tabs } from "expo-router";
+import React from "react";
+import { Platform } from "react-native";
+import { Colors } from "@/constants/Colors";
+import { useColorScheme } from "react-native";
+import { Icon } from "@rneui/themed";
+// import "../../global.css";
 export default function TabLayout() {
   const colorScheme = useColorScheme();
 
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        headerShown: false,
-        tabBarButton: HapticTab,
-        tabBarBackground: TabBarBackground,
-        tabBarStyle: Platform.select({
-          ios: {
-            // Use a transparent background on iOS to show the blur effect
-            position: 'absolute',
-          },
-          default: {},
-        }),
-      }}>
+        tabBarStyle: {
+          backgroundColor: colorScheme === "dark" ? "#212330" : "#ffffff", // Custom background
+          borderTopWidth: 0, // Removes border if needed
+          elevation: 0, // Removes shadow on Android
+        },
+        tabBarActiveTintColor: colorScheme === "dark" ? "#FFAC30" : "#000000", // Text color
+        tabBarInactiveTintColor: colorScheme === "dark" ? "#888" : "#666",
+      }}
+    >
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
+          title: "Home",
+          headerShown: false,
+          tabBarIcon: ({ color }) => (
+            <Icon type="antdesign" size={24} name="home" color={color} />
+          ),
         }}
       />
       <Tabs.Screen
-        name="explore"
+        name="learn"
         options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+          title: "Learn",
+          headerShown: false,
+          tabBarIcon: ({ color }) => (
+            <Icon type="antdesign" size={24} name="linechart" color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="subscribe"
+        options={{
+          title: "Subscribe",
+          headerShown: false,
+          tabBarIcon: ({ color }) => (
+            <Icon type="antdesign" size={24} name="rocket1" color={color} />
+          ),
+        }}
+      />{" "}
+      <Tabs.Screen
+        name="user"
+        options={{
+          title: "User",
+          headerShown: false,
+          tabBarIcon: ({ color }) => (
+            <Icon type="antdesign" size={24} name="user" color={color} />
+          ),
         }}
       />
     </Tabs>
