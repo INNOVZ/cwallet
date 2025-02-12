@@ -19,7 +19,7 @@ const wallet = () => {
 
   return (
     <LinearGradient
-      colors={["#CBD3E5", "#EBE0D2", "#C6D7DD"]}
+      colors={["#CBD3E5", "#EBE0D2", "#F1F0F5"]}
       style={[styles.container, themeContainerStyle]}
     >
       <SafeAreaView className="flex-1 m-5">
@@ -138,7 +138,7 @@ const wallet = () => {
           </View>
         </View>
 
-        <View className="mt-5 flex-row justify-between items-center">
+        <View className="mt-5 overflow-hidden flex-row justify-between items-center">
           <View style={styles.gray} className="mt-5 px-12 py-3 rounded-3xl">
             <Text
               style={{ fontFamily: "RalewaySemiBold" }}
@@ -147,7 +147,7 @@ const wallet = () => {
               Send
             </Text>
           </View>
-          <View style={styles.gray} className="mt-5 px-12 py-3 rounded-3xl">
+          <View style={styles.gray} className="mt-5 px-8 py-3 rounded-3xl">
             <Text
               style={{ fontFamily: "RalewaySemiBold" }}
               className="text-black text-center text-lg"

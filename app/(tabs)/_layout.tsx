@@ -12,7 +12,8 @@ export default function TabLayout() {
     <Tabs
       screenOptions={{
         tabBarStyle: {
-          backgroundColor: colorScheme === "dark" ? "#212330" : "#ffffff", // Custom background
+          backgroundColor:
+            colorScheme === "dark" ? "transparant" : "transparant", // Custom background
           borderTopWidth: 0, // Removes border if needed
           elevation: 0, // Removes shadow on Android
         },
@@ -40,16 +41,7 @@ export default function TabLayout() {
           ),
         }}
       />
-      <Tabs.Screen
-        name="subscribe"
-        options={{
-          title: "Subscribe",
-          headerShown: false,
-          tabBarIcon: ({ color }) => (
-            <Icon type="antdesign" size={24} name="rocket1" color={color} />
-          ),
-        }}
-      />{" "}
+
       <Tabs.Screen
         name="user"
         options={{

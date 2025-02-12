@@ -21,9 +21,28 @@ const wallet = () => {
       colors={["#CBD3E5", "#EBE0D2", "#C6D7DD"]}
       style={[styles.container, themeContainerStyle]}
     >
-      <SafeAreaView className="flex-1">
-        <View className="flex justify-center items-center">
-          <Text className="font-bold text-4xl mt-5">My Wallet</Text>
+      <SafeAreaView className="flex-1 m-5">
+        <View className="flex-row justify-between items-center">
+          <View className="p-8"></View>
+          <View className="">
+            <Text
+              style={{ fontFamily: "RalewayBold" }}
+              className=" text-4xl mt-5"
+            >
+              Invest
+            </Text>
+          </View>
+          <View
+            style={styles.white}
+            className="flex justify-center w-14 h-14 rounded-full items-center"
+          >
+            <Icon
+              type="MaterialIcons"
+              size={24}
+              name="settings"
+              color={"#676767"}
+            />
+          </View>
         </View>
         <View className="flex-row mt-5 justify-center items-center">
           <Text className="font-bold text-2xl mt-9">%</Text>

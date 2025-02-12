@@ -18,7 +18,7 @@ const wallet = () => {
 
   return (
     <LinearGradient
-      colors={["#CBD3E5", "#EBE0D2", "#C6D7DD"]}
+      colors={["#CBD3E5", "#EBE0D2", "#F1F0F5"]}
       style={[styles.container, themeContainerStyle]}
     >
       <SafeAreaView className="flex-1">
