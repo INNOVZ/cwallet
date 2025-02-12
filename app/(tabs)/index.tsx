@@ -84,7 +84,12 @@ const wallet = () => {
           </View>
         </View>
 
-        <View style={styles.gray} className="mt-5 p-8 rounded-3xl">
+        <BlurView
+          intensity={6}
+          tint="dark"
+          style={[styles.card]}
+          className="mt-5 p-8 rounded-3xl"
+        >
           <View className="flex-row justify-between items-center">
             <Text className="text-gray-700 text-6xl text-xs">4 Mo.</Text>
             <Icon
@@ -136,25 +141,35 @@ const wallet = () => {
               +23.78%
             </Text>
           </View>
-        </View>
+        </BlurView>
 
         <View className="mt-5 overflow-hidden flex-row justify-between items-center">
-          <View style={styles.gray} className="mt-5 px-12 py-3 rounded-3xl">
+          <BlurView
+            intensity={5}
+            tint="dark"
+            style={[styles.card]}
+            className="mt-5 px-8 py-3 rounded-3xl "
+          >
             <Text
               style={{ fontFamily: "RalewaySemiBold" }}
               className="text-black text-center text-lg"
             >
               Send
             </Text>
-          </View>
-          <View style={styles.gray} className="mt-5 px-8 py-3 rounded-3xl">
+          </BlurView>
+          <BlurView
+            intensity={5}
+            tint="dark"
+            style={[styles.card]}
+            className="mt-5 px-8 py-3 rounded-3xl "
+          >
             <Text
               style={{ fontFamily: "RalewaySemiBold" }}
               className="text-black text-center text-lg"
             >
               Recieved
             </Text>
-          </View>
+          </BlurView>
           <Link
             className="mt-5 bg-black px-12 py-3 rounded-3xl"
             href="/(modals)/invest"
@@ -195,9 +210,14 @@ const styles = StyleSheet.create({
     color: "#d0d0c0",
   },
   gray: {
-    backgroundColor: "rgba(207, 207, 207, 0.64)",
+    backgroundColor: "rgba(222, 222, 222, 0.59)",
   },
   white: {
     backgroundColor: "rgba(255, 255, 255, 0.37)",
+  },
+  card: {
+    overflow: "hidden",
+    borderColor: "rgba(255, 255, 255, 0.1)",
+    borderWidth: 1,
   },
 });

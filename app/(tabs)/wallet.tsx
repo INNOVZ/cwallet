@@ -27,7 +27,7 @@ const wallet = () => {
         </View>
         <View className="flex-row mt-5 justify-center items-center">
           <Text className="font-bold text-2xl mt-9">%</Text>
-          <Text className=" text-center font-regular text-8xl mt-3">32</Text>
+          <Text className=" text-center font-regular text-8xl mt-3">7.9</Text>
           <View>
             <Text className=" text-center font-light text-sm">(Gr)</Text>
             <Icon

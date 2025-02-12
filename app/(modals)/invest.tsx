@@ -8,7 +8,7 @@ import {
 import React from "react";
 import { LinearGradient } from "expo-linear-gradient";
 import { Icon } from "@rneui/themed";
-import Card from "../../components/Card";
+import Chart from "../../components/Chart";
 
 const wallet = () => {
   const colorScheme = useColorScheme();
@@ -26,7 +26,7 @@ const wallet = () => {
           <View className="p-8"></View>
           <View className="">
             <Text
-              style={{ fontFamily: "RalewayBold" }}
+              style={{ fontFamily: "RalewaySemi=Bold" }}
               className=" text-4xl mt-5"
             >
               Invest
@@ -44,22 +44,38 @@ const wallet = () => {
             />
           </View>
         </View>
-        <View className="flex-row mt-5 justify-center items-center">
-          <Text className="font-bold text-2xl mt-9">%</Text>
-          <Text className=" text-center font-regular text-8xl mt-3">32</Text>
-          <View>
-            <Text className=" text-center font-light text-sm">(Gr)</Text>
+
+        <View className="mt-5 justify-center items-center">
+          <View
+            style={styles.white}
+            className="flex justify-center w-14 h-14 rounded-full items-center"
+          >
             <Icon
               type="MaterialIcons"
-              size={30}
-              name="arrow-drop-up"
-              color={"#676767"}
-              className="pt-7"
+              size={24}
+              name="trending-up"
+              color={"#FFFFFF"}
+              className="bg-black rounded-full"
             />
+          </View>
+          <View className="flex-row justify-center items-center">
+            <Text className="mt-5 text-center font-regular text-8xl mt-3">
+              32
+            </Text>
+            <View>
+              <Text className="pt-2 text-center font-bold text-base">%</Text>
+              <Icon
+                type="MaterialIcons"
+                size={30}
+                name="arrow-drop-up"
+                color={"#676767"}
+                className="pt-7"
+              />
+            </View>
           </View>
         </View>
         <View className="h-1/4 mx-5">
-          <Card />
+          <Chart />
         </View>
       </SafeAreaView>
     </LinearGradient>
@@ -91,6 +107,6 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(205, 205, 205, 0.4)",
   },
   white: {
-    backgroundColor: "rgba(205, 205, 205, 0.4)",
+    backgroundColor: "rgba(234, 234, 234, 0.67)",
   },
 });
