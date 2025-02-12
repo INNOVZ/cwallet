@@ -121,14 +121,14 @@ const wallet = () => {
             >
               +23.78%
             </Text>
-            iew className="mt-5 flex-row justify-between items-center">
+
             <Text
               style={{ fontFamily: "RalewaySemiBold" }}
               className="text-black text-center text-sm"
             >
               +1.60%
             </Text>
-            iew className="mt-5 flex-row justify-between items-center">
+
             <Text
               style={{ fontFamily: "RalewaySemiBold" }}
               className="text-black text-center text-sm"
@@ -140,21 +140,34 @@ const wallet = () => {
 
         <View className="mt-5 flex-row justify-between items-center">
           <View style={styles.gray} className="mt-5 px-12 py-3 rounded-3xl">
-            <Text style={{ fontFamily: "RalewaySemiBold" }} className="text-black text-center text-lg">Send</Text>
+            <Text
+              style={{ fontFamily: "RalewaySemiBold" }}
+              className="text-black text-center text-lg"
+            >
+              Send
+            </Text>
           </View>
           <View style={styles.gray} className="mt-5 px-12 py-3 rounded-3xl">
-            <Text style={{ fontFamily: "RalewaySemiBold" }} className="text-black text-center text-lg">Recieved</Text>
+            <Text
+              style={{ fontFamily: "RalewaySemiBold" }}
+              className="text-black text-center text-lg"
+            >
+              Recieved
+            </Text>
           </View>
-          <Link className="mt-5 bg-black px-12 py-3 rounded-3xl"
-          href="/(modals)/invest">
-             <Icon
+          <Link
+            className="mt-5 bg-black px-12 py-3 rounded-3xl"
+            href="/(modals)/invest"
+          >
+            <Icon
               type="MaterialIcons"
               size={22}
               name="wallet"
               color={"#FFFFFF"}
             />
-            </Link>
-          </View>
+            {/* </View> */}
+          </Link>
+        </View>
       </SafeAreaView>
     </LinearGradient>
   );
