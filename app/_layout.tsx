@@ -33,7 +33,7 @@ export default function RootLayout() {
     <Stack>
       <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
       <Stack.Screen
-        name="(modals)/[id]"
+        name="(modals)/invest"
         options={{
           headerShown: false,
           presentation: "modal",

@@ -31,9 +31,9 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="learn"
+        name="wallet"
         options={{
-          title: "Learn",
+          title: "Wallet",
           headerShown: false,
           tabBarIcon: ({ color }) => (
             <Icon type="antdesign" size={24} name="linechart" color={color} />
