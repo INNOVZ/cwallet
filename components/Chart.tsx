@@ -1,45 +1,70 @@
+import React from "react";
+import { StyleSheet, View } from "react-native";
 import {
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-  SafeAreaView,
-  Dimensions,
-} from "react-native";
-import { LineChart } from "react-native-chart-kit";
+  VictoryBar,
+  VictoryChart,
+  VictoryTheme,
+  VictoryTooltip,
+} from "victory-native";
 
-const Chart = () => {
-  const data = {
-    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
-    datasets: [
-      {
-        data: [20, 45, 28, 80, 99, 43],
-      },
-    ],
-  };
+const data = [
+  { quarter: 1, earnings: 13000 },
+  { quarter: 2, earnings: 19500 },
+  { quarter: 3, earnings: 14250 },
+  { quarter: 4, earnings: 12000 },
+];
 
+export default function App() {
   return (
-    <LineChart
-      data={data}
-      width={Dimensions.get("window").width - 65}
-      height={200}
-      chartConfig={{
-        backgroundColor: "#ffffff",
-        backgroundGradientFrom: "rgba(225, 225, 225, 0.65)",
-        backgroundGradientTo: "rgba(225, 225, 225, 0.65)",
-        decimalPlaces: 2,
-        color: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
-        style: {
-          borderRadius: 16,
-        },
-      }}
-      bezier
-      style={{
-        marginVertical: 8,
-        borderRadius: 16,
-      }}
-    />
+    <View style={styles.container}>
+      <VictoryBar
+        labelComponent={
+          <VictoryTooltip
+            flyoutWidth={95}
+            flyoutHeight={35}
+            cornerRadius={5}
+            pointerLength={40}
+            flyoutStyle={{
+              stroke: "#868C97",
+              strokeWidth: 2,
+              fill: "#FFFFFF",
+            }}
+            style={{
+              fill: "#868C97",
+              fontSize: 10,
+              fontWeight: 500,
+              textAnchor: "middle",
+            }}
+          />
+        }
+        data={data}
+        x="quarter"
+        y="earnings"
+        theme={VictoryTheme.clean}
+        barRatio={1}
+        animate={{ duration: 250 }}
+        style={{
+          data: {
+            fill: "rgb(209, 209, 209)",
+            fillOpacity: 0.8,
+            strokeWidth: 2,
+          },
+          labels: {
+            fontSize: 12,
+            fill: "#c43a31",
+          },
+        }}
+      />
+    </View>
   );
-};
+}
 
-export default Chart;
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 20,
+    borderColor: "rgba(209, 209, 209, 0.15)",
+  },
+});

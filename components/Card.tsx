@@ -6,7 +6,12 @@ import SelectCard from "./SelectCard";
 const Card = () => {
   if (Platform.OS === "ios") {
     return (
-      <BlurView intensity={6} tint="dark" style={[styles.card]}>
+      <BlurView
+        intensity={6}
+        tint="dark"
+        style={[styles.card]}
+        className="mx-5"
+      >
         <View className="">
           <SelectCard />
         </View>

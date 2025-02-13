@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { View, Text, StyleSheet, Platform } from "react-native";
 import { Picker } from "@react-native-picker/picker";
 import { CardData } from "../data/CardData";
+import { Icon } from "@rneui/themed";
 
 const SelectCard = () => {
   const [selectedValue, setSelectedValue] = useState("USD");
@@ -25,15 +26,35 @@ const SelectCard = () => {
           </Text>
         </View> */}
 
-        <View style={styles.statsSection}>
-          <View style={styles.statItem}>
-            <Text style={styles.statLabel}>Account Number</Text>
-            <Text>**** 0068 9934</Text>
+        <View className="flex flex-row justify-between items-center">
+          <View className="flex">
+            <Text
+              style={{ fontFamily: "RalewayRegular" }}
+              className="text-gray-500 text-center text-base"
+            >
+              Account Number
+            </Text>
+            <Text
+              style={{ fontFamily: "RalewayBold" }}
+              className="text-black text-center text-base"
+            >
+              **** 0068 9934
+            </Text>
           </View>
 
-          <View style={styles.statItem}>
-            <Text style={styles.statLabel}>Valid Date</Text>
-            <Text>{currencyInfo.date}</Text>
+          <View>
+            <Text
+              style={{ fontFamily: "RalewayRegular" }}
+              className="text-gray-500 text-center text-base"
+            >
+              Valid Date
+            </Text>
+            <Text
+              style={{ fontFamily: "RalewayBold" }}
+              className="text-black text-center text-base"
+            >
+              {currencyInfo.date}
+            </Text>
           </View>
         </View>
       </View>
@@ -41,41 +62,48 @@ const SelectCard = () => {
   };
 
   return (
-    <View style={styles.container}>
-      {/* Dropdown */}
-      <View style={styles.pickerContainer}>
-        {Platform.OS === "ios" ? (
-          <Picker
-            selectedValue={selectedValue}
-            onValueChange={(itemValue) => setSelectedValue(itemValue)}
-            style={[styles.picker, styles.iosPicker]}
-            itemStyle={styles.iosPickerItem}
-            mode="dropdown"
-          >
-            {Object.keys(CardData).map((currency) => (
-              <Picker.Item key={currency} label={currency} value={currency} />
-            ))}
-          </Picker>
-        ) : (
-          <Picker
-            selectedValue={selectedValue}
-            onValueChange={(itemValue) => setSelectedValue(itemValue)}
-            style={styles.picker}
-            dropdownIconColor="white"
-            mode="dropdown"
-          >
-            {Object.keys(CardData).map((currency) => (
-              <Picker.Item key={currency} label={currency} value={currency} />
-            ))}
-          </Picker>
-        )}
-        <View style={styles.arrowContainer}>
-          <Text style={styles.arrow}>▼</Text>
+    <View>
+      <View style={styles.container}>
+        {/* Dropdown */}
+        <View style={styles.pickerContainer}>
+          {Platform.OS === "ios" ? (
+            <Picker
+              selectedValue={selectedValue}
+              onValueChange={(itemValue) => setSelectedValue(itemValue)}
+              style={[styles.picker, styles.iosPicker]}
+              itemStyle={styles.iosPickerItem}
+              mode="dropdown"
+            >
+              {Object.keys(CardData).map((currency) => (
+                <Picker.Item key={currency} label={currency} value={currency} />
+              ))}
+            </Picker>
+          ) : (
+            <Picker
+              selectedValue={selectedValue}
+              onValueChange={(itemValue) => setSelectedValue(itemValue)}
+              style={styles.picker}
+              dropdownIconColor="white"
+              mode="dropdown"
+            >
+              {Object.keys(CardData).map((currency) => (
+                <Picker.Item key={currency} label={currency} value={currency} />
+              ))}
+            </Picker>
+          )}
+          <View style={styles.arrowContainer}>
+            <Icon
+              type="MaterialIcons"
+              size={30}
+              name="keyboard-arrow-down"
+              color={"#FFFFFF"}
+            />
+          </View>
         </View>
-      </View>
 
-      {/* Content based on selection */}
-      <View style={styles.contentContainer}>{renderContent()}</View>
+        {/* Content based on selection */}
+        <View style={styles.contentContainer}>{renderContent()}</View>
+      </View>
     </View>
   );
 };
@@ -88,7 +116,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     borderRadius: 50,
     overflow: "hidden",
-    width: "28%",
+    width: "35%",
     backgroundColor: "black",
     ...Platform.select({
       ios: {
@@ -163,9 +191,9 @@ const styles = StyleSheet.create({
   },
   arrowContainer: {
     position: "absolute",
-    paddingLeft: 7,
+    paddingLeft: 8,
     right: 12,
-    top: "49%",
+    top: "28%",
     width: "auto",
     // transform: [{ translateY: -15 }], // Adjust this value to center the arrow
     pointerEvents: "none", // Makes sure the arrow doesn't interfere with picker touches

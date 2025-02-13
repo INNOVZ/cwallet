@@ -10,6 +10,7 @@ import { LinearGradient } from "expo-linear-gradient";
 import { BlurView } from "expo-blur";
 import { Icon } from "@rneui/themed";
 import Card from "../../components/Card";
+import { Avatar } from "@rneui/themed";
 
 const wallet = () => {
   const colorScheme = useColorScheme();
@@ -48,28 +49,34 @@ const wallet = () => {
           </View>
         </View>
 
-        <View className="flex-row mt-5 justify-center items-center">
-          <View>
+        <View className="mt-5 justify-center items-center">
+          <View className="mt-5 justify-center items-center">
+            <Avatar
+              size={60}
+              rounded
+              source={{ uri: "https://randomuser.me/api/portraits/men/36.jpg" }}
+              containerStyle={{ marginVertical: 20 }}
+            />
             <Text
-              style={{ fontFamily: " RalewayRegular" }}
+              style={{ fontFamily: "RalewayRegular" }}
               className="text-gray-700 text-center text-xs"
             >
               Premium Feb 10,2025
             </Text>
             <Text
-              style={{ fontFamily: " RalewayLight" }}
+              style={{ fontFamily: "RalewayMedium" }}
               className="mt-4 text-gray-700 text-center text-3xl text-xs"
             >
-              Jithin & Sanu
+              Jithin - Sanu
             </Text>
             <Text
-              style={{ fontFamily: " RalewayLight" }}
+              style={{ fontFamily: "RalewaySemiBold" }}
               className="mt-8 text-gray-700 text-center text-5xl text-xs"
             >
               10.09 BTC
             </Text>
             <Text
-              style={{ fontFamily: " RalewayRegular" }}
+              style={{ fontFamily: "RalewayRegular" }}
               className="mt-4 text-gray-700 text-center text-xs"
             >
               [000 ...08TRc83X]
